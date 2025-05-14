@@ -1,6 +1,12 @@
 #!/bin/bash
-# Ce script crée un répertoire nommé 'test_directory'
+# Vérifier si le répertoire existe avant de le créer
 
-echo "Création du répertoire test_directory..."
-mkdir test_directory
-echo "Répertoire créé avec succès !"
+dir_name="test_directory"
+
+if [ -d "$dir_name" ]; then
+    echo "Le répertoire '$dir_name' existe déjà."
+else
+    echo "Création du répertoire '$dir_name'..."
+    mkdir "$dir_name"
+    echo "Répertoire créé avec succès !"
+fi
